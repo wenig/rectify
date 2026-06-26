@@ -58,5 +58,5 @@ target-version = "py310"   # matches requires-python = ">=3.10"
 dev = [
     "pytest>=9.1.1",
     "ruff>=0.15.19",
-    "ty>=0.0.53",
+    "ty>=0.0.54",
 ]
