@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rectify · Edit your website by drawing on it</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#how">Skip to the walkthrough</a>
+
+  <header class="nav">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3a2 2 0 0 0-2 2"/><path d="M19 3a2 2 0 0 1 2 2"/><path d="M21 19a2 2 0 0 1-2 2"/><path d="M5 21a2 2 0 0 1-2-2"/><path d="M9 3h1"/><path d="M9 21h1"/><path d="M14 3h1"/><path d="M14 21h1"/><path d="M3 9v1"/><path d="M21 9v1"/><path d="M3 14v1"/><path d="M21 14v1"/></svg>
+      </span>
+      Rectify
+    </a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta cta-sm" href="/login">Log in</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Self-hosted · single owner · no SaaS</p>
+        <h1 class="headline">Edit your website by drawing on it.</h1>
+        <p class="tagline">
+          Log in, draw a box over anything on the live page, and describe the
+          change in plain words. Rectify's AI agent finds the real source file,
+          edits it, and the page updates — no code, no dashboard, no build step.
+        </p>
+        <div class="cta-row">
+          <a class="cta" href="/login">Log in to try it</a>
+          <a class="cta ghost" href="#how">See how it works</a>
+        </div>
+        <p class="trust">
+          Works with plain HTML, React, Vue, and Svelte. Bring your own model —
+          Claude, GPT, or a local Ollama.
+        </p>
+      </div>
+
+      <!-- "draw-on-the-page" mock, built from HTML+CSS so each part stays selectable -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="browser-body">
+            <div class="skel-line wide"></div>
+            <div class="skel-line"></div>
+            <div class="skel-line short"></div>
+            <div class="selection">
+              <span class="handle tl"></span><span class="handle tr"></span>
+              <span class="handle bl"></span><span class="handle br"></span>
+            </div>
+          </div>
+          <div class="prompt-bubble">
+            <span class="bubble-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3a2 2 0 0 0-2 2"/><path d="M19 3a2 2 0 0 1 2 2"/><path d="M21 19a2 2 0 0 1-2 2"/><path d="M5 21a2 2 0 0 1-2-2"/><path d="M9 3h1"/><path d="M9 21h1"/><path d="M14 3h1"/><path d="M14 21h1"/><path d="M3 9v1"/><path d="M21 9v1"/><path d="M3 14v1"/><path d="M21 14v1"/></svg>
+            </span>
+            <span class="bubble-text">make this headline bolder</span>
+            <span class="bubble-send">Send</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-num">0</span>
+        <p>build plugins — it edits source, not your toolchain</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1</span>
+        <p>owner — only you can edit; visitors never load the editor</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <p>your files — edits land in real source, fully reversible</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <p>ways to deploy — Railway, Docker, or local Python</p>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS / TRY IT LIVE -->
+    <section id="how" class="how">
+      <div class="section-head">
+        <h2>Try it live, right now</h2>
+        <p>
+          This page is the demo, and you're the owner. Work through these steps
+          and watch Rectify edit this very page.
+        </p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <h3>Log in</h3>
+          <p>
+            Sign in with your owner password. A dashed-square icon appears in the
+            bottom-right corner — that's the editor, and only you can see it.
+          </p>
+          <a class="cta" href="/login">Log in</a>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <h3>Select &amp; describe</h3>
+          <p>
+            Click the dashed-square icon, drag a box over this paragraph, and type
+            <em>“make this text larger and friendlier.”</em> Rectify locates the
+            source, edits the real file, and the page updates.
+          </p>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <h3>Add an image</h3>
+          <p>
+            Select a spot, then click the <strong>paperclip</strong> in the
+            prompt to attach an image and type <em>“put this image here.”</em>
+            Rectify saves it to <code>/uploads/</code> and wires it into the page
+            with an <code>&lt;img&gt;</code> tag.
+          </p>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <h3>Log out</h3>
+          <p>
+            Click <strong>Log out</strong>. The icon disappears — visitors only
+            ever see the finished page, never the editor.
+          </p>
+          <a class="cta secondary" href="/logout">Log out</a>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features-section">
+      <div class="section-head">
+        <h2>Everything you need to edit a live site</h2>
+        <p>Point, describe, done. Rectify does the rest — on your server, with your files.</p>
+      </div>
+      <div class="features">
+        <article class="card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3a2 2 0 0 0-2 2"/><path d="M19 3a2 2 0 0 1 2 2"/><path d="M21 19a2 2 0 0 1-2 2"/><path d="M5 21a2 2 0 0 1-2-2"/><path d="M9 3h1"/><path d="M9 21h1"/><path d="M14 3h1"/><path d="M14 21h1"/><path d="M3 9v1"/><path d="M21 9v1"/><path d="M3 14v1"/><path d="M21 14v1"/></svg>
+          </span>
+          <h3>Draw to select</h3>
+          <p>Box-select any element on the page. No CSS selectors, no dev tools.</p>
+        </article>
+        <article class="card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h6"/></svg>
+          </span>
+          <h3>Plain-language edits</h3>
+          <p>Describe the change in words. The agent figures out the rest.</p>
+        </article>
+        <article class="card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12.5 8 15l2 2.5"/><path d="m14 12.5 2 2.5-2 2.5"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/></svg>
+          </span>
+          <h3>Edits real source</h3>
+          <p>It changes your actual files — not the DOM. Commit them, diff them, own them.</p>
+        </article>
+        <article class="card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.234 20.252 21 12.3"/><path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"/></svg>
+          </span>
+          <h3>Drop in files</h3>
+          <p>Attach images with the paperclip; they land in <code>/uploads/</code> and get wired in.</p>
+        </article>
+        <article class="card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+          </span>
+          <h3>Bring your own model</h3>
+          <p>LLM-agnostic via LiteLLM: Claude, GPT, or a local Ollama model — one env var.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <!-- Sample testimonials: replace these with your own, or delete this section. -->
+    <section class="testimonials">
+      <div class="section-head">
+        <h2>Sample testimonials</h2>
+        <p>Placeholder quotes shipped with the starter — select one and rewrite it with your own.</p>
+      </div>
+      <div class="quotes">
+        <blockquote class="quote">
+          <p>“I redrew our whole landing page in an afternoon without touching the repo by hand.”</p>
+          <footer><span class="avatar" aria-hidden="true">AS</span> A. Sample · Founder</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“Box, type, done. It edits the actual files, so nothing leaks back into a database.”</p>
+          <footer><span class="avatar" aria-hidden="true">BP</span> B. Placeholder · Designer</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“Swapped from Claude to a local Ollama model in one env var. Same workflow.”</p>
+          <footer><span class="avatar" aria-hidden="true">CE</span> C. Example · Indie hacker</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <div class="section-head">
+        <h2>Questions</h2>
+      </div>
+      <details>
+        <summary>Do visitors see the editor?</summary>
+        <p>No. The overlay is injected only for the logged-in owner — everyone else gets clean static markup.</p>
+      </details>
+      <details>
+        <summary>Does it edit the live DOM or my files?</summary>
+        <p>Your actual source files under your site directory. The changes are real, on disk, and reversible.</p>
+      </details>
+      <details>
+        <summary>Which frameworks work?</summary>
+        <p>Plain HTML, React, Vue, and Svelte — it locates source by reading your files, not by relying on a build plugin.</p>
+      </details>
+      <details>
+        <summary>Which AI model does it use?</summary>
+        <p>Any LiteLLM-supported model: Anthropic Claude, OpenAI GPT, or a local Ollama model, chosen with an env var.</p>
+      </details>
+      <details>
+        <summary>How do I deploy it?</summary>
+        <p>One-click on Railway, any Docker host, or <code>python -m rectify.platform</code> locally.</p>
+      </details>
+      <details>
+        <summary>Is my data sent anywhere?</summary>
+        <p>Only your edit prompts go to the model you choose. The site lives on your server — there's no SaaS backend.</p>
+      </details>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-band">
+      <h2>This page is yours now.</h2>
+      <p>Log in and rewrite anything you just read — the headline, these words, the whole layout.</p>
+      <a class="cta" href="/login">Log in and start editing</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-main">Built with Rectify.</p>
+    <p class="footer-sub">Self-hosted · single-owner · open source.</p>
+    <nav class="footer-links">
+      <a href="/login">Log in</a>
+      <a href="#how">How it works</a>
+    </nav>
+  </footer>
+</body>
+</html>

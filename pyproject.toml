@@ -1,0 +1,62 @@
+[project]
+name = "rectify"
+version = "0.1.0"
+description = "Local, LLM-agnostic agent that edits website source code from browser selections, plus a self-hosted platform that serves and live-edits a static site."
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE.md"]
+authors = [{ name = "Phillip Wenig" }]
+keywords = ["llm", "agent", "website-editor", "self-hosted", "fastapi", "litellm"]
+# Note: no "License :: OSI Approved :: MIT License" classifier — the SPDX `license = "MIT"`
+# expression above already conveys it, and setuptools rejects using both together (PEP 639).
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Framework :: FastAPI",
+    "Topic :: Software Development",
+]
+dependencies = [
+    "smolagents>=1.0",
+    "litellm>=1.40",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "websockets>=12.0",
+    "watchfiles>=0.21",
+]
+
+# The `rectify` command is the local editor tool (same as `python -m rectify`).
+# The platform host is started with `python -m rectify.platform`.
+[project.scripts]
+rectify = "rectify.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/wenig/rectify"
+Repository = "https://github.com/wenig/rectify"
+Issues = "https://github.com/wenig/rectify/issues"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["rectify", "rectify.platform"]
+
+[tool.setuptools.package-data]
+rectify = ["overlay/*.js"]
+"rectify.platform" = ["starter/*"]
+
+[tool.ruff]
+target-version = "py310"   # matches requires-python = ">=3.10"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.15.19",
+    "ty>=0.0.53",
+]
