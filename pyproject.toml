@@ -27,7 +27,7 @@ dependencies = [
     "fastapi>=0.110",
     "uvicorn[standard]>=0.27",
     "websockets>=12.0",
-    "watchfiles>=0.21",
+    "watchfiles>=1.2.0",
 ]
 
 # The `rectify` command is the local editor tool (same as `python -m rectify`).
