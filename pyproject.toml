@@ -23,7 +23,7 @@ classifiers = [
 ]
 dependencies = [
     "smolagents>=1.0",
-    "litellm>=1.40",
+    "litellm>=1.89.4",
     "fastapi>=0.110",
     "uvicorn[standard]>=0.27",
     "websockets>=12.0",
