@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Nothing yet._
 
+## [0.1.1]
+
+### Fixed
+
+- **First-boot seeding on ext4 volumes** (e.g. Railway persistent volumes). Such volumes
+  ship a `lost+found` directory, so the mount was never detected as empty and the bundled
+  starter site was never seeded, leaving `SITE_DIR` blank. Volume-created artifacts are now
+  ignored when deciding whether to seed.
+
 ## [0.1.0]
 
 Initial public release.
@@ -31,5 +40,6 @@ Initial public release.
   deploy, and direct local execution.
 - **Bundled starter site** seeded on first boot.
 
-[Unreleased]: https://github.com/wenig/rectify/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/wenig/rectify/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/wenig/rectify/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/wenig/rectify/releases/tag/v0.1.0
