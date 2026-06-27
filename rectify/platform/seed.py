@@ -13,9 +13,16 @@ from pathlib import Path
 
 log = logging.getLogger("rectify.platform")
 
+# Entries the volume itself creates, which don't count as site content. ext4
+# volumes — like Railway's persistent volumes — ship a lost+found directory, so a
+# freshly mounted volume is never literally empty and would otherwise skip seeding.
+_VOLUME_ARTIFACTS = {"lost+found"}
+
 
 def _is_empty(path: Path) -> bool:
-    return not path.exists() or not any(path.iterdir())
+    if not path.exists():
+        return True
+    return all(child.name in _VOLUME_ARTIFACTS for child in path.iterdir())
 
 
 def ensure_site(site_dir: Path, starter_dir: Path) -> None:
