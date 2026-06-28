@@ -28,7 +28,7 @@ the page updates. Self-hosted, single owner, no SaaS.
 </p>
 -->
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/5Vmq5b?referralCode=vpqGob&utm_medium=integration&utm_source=template&utm_campaign=generic)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/rectify?referralCode=vpqGob&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
 One click gives you a running site with a bundled starter page. Set `OWNER_PASSWORD`,
 `LLM_MODEL_ID`, and `LLM_API_KEY`, attach a volume at `/site`, and you're live — log in and
