@@ -10,7 +10,7 @@ services:
       # LLM config (LiteLLM). Override the model for OpenAI/Ollama/etc.
       LLM_MODEL_ID: ${LLM_MODEL_ID:-anthropic/claude-sonnet-4-6}
       LLM_API_KEY: ${LLM_API_KEY:-}
-      # LLM_API_BASE: http://host.docker.internal:11434   # e.g. for local Ollama
+      LLM_API_BASE: ${LLM_API_BASE:-}
       # Set so owner sessions survive restarts (otherwise random per boot).
       SECRET_KEY: ${SECRET_KEY:-}
       # Served + edited directory; matches the volume mount below.
@@ -20,7 +20,13 @@ services:
       - site:/site
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/_platform/health')"]
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8080/_platform/health')",
+        ]
       interval: 30s
       timeout: 5s
       retries: 5
